@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Makolp — Servidor de Minecraft</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<style>html,body{background:#060a1a !important;color:#fff}</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#060a1a;color:#fff">
+<div class="grain"></div>
+<div class="sky"></div>
+<canvas id="stars"></canvas>
+<div class="cur-ring"></div><div class="cur-dot"></div>
+<div class="progress"><i></i></div>
+
+<div class="menu-backdrop"></div>
+<header class="header" id="hdr">
+  <a class="logo appear appear--scale" href="#top" aria-label="Makolp" style="--d:.08s">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+    <span>Makolp<span class="logo-suffix">.mc</span></span>
+  </a>
+  <nav id="site-nav" aria-label="Principal">
+    <a class="appear appear--scale" style="--d:.16s" href="#ips">IPs</a>
+    <a class="appear appear--soft" style="--d:.28s" href="#sobre">Sobre</a>
+    <a class="appear appear--scale" style="--d:.4s" href="#como">Como entrar</a>
+    <a class="appear appear--soft" style="--d:.52s" href="https://www.tiktok.com/@itsmakolp?_r=1&_t=ZS-9BXyAkZ48o9" target="_blank" rel="noopener">TikTok</a>
+  </nav>
+  <a class="btn btn-solid header-cta appear appear--scale" style="--d:.34s" href="#ips">Copiar IP</a>
+  <button class="burger appear appear--scale" style="--d:.34s" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu"><i></i><i></i><i></i></button>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <video class="hero-photo" autoplay muted loop playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260818_072341_50851634-bbc3-4c33-9acc-7647d4db44aa.mp4" onerror="this.remove()"></video>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div class="badge appear appear--pop" style="--d:.22s">
+        <svg class="badge-star" width="18" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.6C12.55 2.6 12.88 3.15 13.08 4.7c.62 4.7 1.52 5.6 6.22 6.22 1.55.2 2.1.53 2.1 1.08s-.55.88-2.1 1.08c-4.7.62-5.6 1.52-6.22 6.22-.2 1.55-.53 2.1-1.08 2.1s-.88-.55-1.08-2.1c-.62-4.7-1.52-5.6-6.22-6.22C3.15 12.88 2.6 12.55 2.6 12s.55-.88 2.1-1.08c4.7-.62 5.6-1.52 6.22-6.22C11.12 3.15 11.45 2.6 12 2.6Z"/></svg>
+        Minecraft Java &amp; Bedrock
+      </div>
+      <h1>
+        <span class="headline-line appear appear--mask" style="--d:.42s">Entre no servidor da</span>
+        <span class="headline-line appear appear--mask" style="--d:.62s"> <em>Makolp</em></span>
+      </h1>
+      <p class="lede appear appear--soft" style="--d:.82s;animation-duration:1.25s">Copie o IP da sua versão, cole no Minecraft e jogue com a Makolp.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid hero-btn appear appear--btn elastic" style="--d:.96s" href="#ips">Copiar IP</a>
+        <a class="btn btn-ghost hero-btn appear appear--side elastic" style="--d:1.1s" href="https://www.tiktok.com/@itsmakolp?_r=1&_t=ZS-9BXyAkZ48o9" target="_blank" rel="noopener">TikTok da Makolp</a>
+      </div>
+    </div>
+  </div>
+  <footer class="stats">
+    <div class="stat appear appear--stat" style="--d:1.12s">
+      <svg class="stat-icon" viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="3" y1="2" x2="14" y2="22" gradientUnits="userSpaceOnUse"><stop offset=".38" stop-color="#fff"/><stop offset=".62" stop-color="#3a52c4"/></linearGradient><linearGradient id="g2" x1="3" y1="2" x2="14" y2="22" gradientUnits="userSpaceOnUse"><stop offset=".38" stop-color="#3a52c4"/><stop offset=".62" stop-color="#fff"/></linearGradient></defs><rect x="3.4" y="2.6" width="7.2" height="18.8" rx="3.6" fill="url(#g1)"/><rect x="13.4" y="2.6" width="7.2" height="18.8" rx="3.6" fill="url(#g2)"/><rect x="9.2" y="10.9" width="5.6" height="2.2" rx="1.1" fill="#2a3a8a"/></svg>
+      <span><b class="odo" data-odo="2">2</b> edições: Java e Bedrock</span>
+    </div>
+    <div class="stat appear appear--stat" style="--d:1.28s">
+      <svg class="stat-icon" viewBox="0 0 24 24"><rect x="2.4" y="2.4" width="19.2" height="19.2" rx="6.2" fill="#fff"/><path d="M12 7.1v7.4M8.15 12.35L12 16.2l3.85-3.85" fill="none" stroke="#0b1a5c" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Menos de <b class="odo" data-odo="1">1</b> minuto para entrar</span>
+    </div>
+    <div class="stat appear appear--stat" style="--d:1.44s">
+      <img class="stat-avatar" src="avatar.png" alt="Avatar da Makolp">
+      <span>Comunidade da Makolp</span>
+    </div>
+  </footer>
+</section>
+
+<section class="sec" id="sobre">
+  <p class="eyebrow rw">Sobre</p>
+  <p class="fill">Um servidor feito para quem gosta de jogar multiplayer, explorar e jogar junto. Entre, escolha sua versão e faça parte do servidor da Makolp.</p>
+</section>
+
+<section class="sec" id="ips">
+  <p class="eyebrow rw">Conexão</p>
+  <h2 class="rw">IPs do servidor</h2>
+  <p class="sub rw">Escolha sua edição e toque em copiar.</p>
+  <div class="stack">
+    <article class="scard">
+      <span class="badge-s">JAVA</span><h3>Minecraft Java</h3><small>PC · Windows, Mac e Linux</small>
+      <div class="ip"><code>servidor-da-makolp-b140b2.play.shulkerboxes.com</code><button class="btn btn-solid elastic" data-ip="servidor-da-makolp-b140b2.play.shulkerboxes.com">Copiar</button></div>
+    </article>
+    <article class="scard">
+      <span class="badge-s">BEDROCK</span><h3>Minecraft Bedrock</h3><small>Celular, console e Windows</small>
+      <div class="ip"><code>servidor-da-makolp-b140b2.bed
+        rock.shulkerboxes.com</code><button class="btn btn-solid elastic" data-ip="servidor-da-makolp-b140b2.bedrock.shulkerboxes.com">Copiar</button></div>
+    </article>
+    <article class="scard">
+      <span class="badge-s">COMUNIDADE</span><h3>Siga a Makolp</h3><small>Novidades e vídeos no TikTok</small>
+      <div class="ip"><code>@itsmakolp</code><a class="btn btn-ghost elastic" href="https://www.tiktok.com/@itsmakolp?_r=1&_t=ZS-9BXyAkZ48o9" target="_blank" rel="noopener">Abrir</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="como">
+  <p class="eyebrow rw">Passo a passo</p>
+  <h2 class="rw">Como entrar</h2>
+  <p class="sub rw">Leva menos de um minuto.</p>
+  <div class="tl">
+    <div class="tl-line"><i></i></div>
+    <div class="tl-step"><b>Abra o Minecraft</b><span>Java ou Bedrock, como preferir.</span></div>
+    <div class="tl-step"><b>Vá em Servidores</b><span>Adicionar servidor.</span></div>
+    <div class="tl-step"><b>Cole o IP</b><span>Use o botão de copiar acima.</span></div>
+    <div class="tl-step"><b>Jogue!</b><span>Siga a Makolp no TikTok.</span></div>
+  </div>
+</section>
+</main>
+<footer class="foot">Feito por skyzekpt, Mako Mago</footer>
+<div id="toast">IP copiado! ✅</div>
+<canvas id="confetti"></canvas>
+<script src="script.js"></script>
+</body>
+</html>
